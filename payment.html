@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment - Tanjore Hotels</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url("https://png.pngtree.com/background/20250108/original/pngtree-take-a-look-at-this-beautiful-prambanan-temple-picture-image_15628658.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: rgba(0,0,0,0.7);
+    }
+    section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+    .payment-box {
+      background: rgba(0,0,0,0.7);
+      padding: 30px;
+      border-radius: 15px;
+      width: 350px;
+      text-align: left;
+      animation: fadeIn 2s ease-in;
+    }
+    .payment-box h2 { color: yellow; text-align: center; }
+    label { display: block; margin: 12px 0 5px; }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: yellow;
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover { background: orange; transform: scale(1.05); }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Secure Payment</h1>
+  </header>
+
+  <section>
+    <div class="payment-box">
+      <h2>Enter Payment Details</h2>
+      <form onsubmit="confirmPayment(event)">
+        <label>Cardholder Name:</label>
+        <input type="text" required>
+
+        <label>Card Number:</label>
+        <input type="text" maxlength="16" required>
+
+        <label>Expiry Date:</label>
+        <input type="month" required>
+
+        <label>CVV:</label>
+        <input type="password" maxlength="3" required>
+
+        <label>Payment Method:</label>
+        <select>
+          <option>Credit Card</option>
+          <option>Debit Card</option>
+          <option>UPI</option>
+          <option>Net Banking</option>
+        </select>
+
+        <button type="submit">Pay Now</button>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    function confirmPayment(e) {
+      e.preventDefault();
+      alert("✅ Payment Successful! Your hotel booking is confirmed.");
+      window.location.href = "index.html"; // Redirect back to home
+    }
+  </script>
+</body>
+</html>
