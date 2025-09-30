@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tanjore Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url("https://png.pngtree.com/background/20250108/original/pngtree-take-a-look-at-this-beautiful-prambanan-temple-picture-image_15628658.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            padding: 30px;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            animation: fadeIn 2s ease-in;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            animation: slideUp 2s ease forwards;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border: 3px solid white;
+            border-radius: 12px;
+            transition: transform 0.4s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            padding: 15px 0;
+            text-align: center;
+            animation: fadeIn 3s ease-in;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover { background: #fff; color: #c0392b; }
+        @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+        @keyframes slideUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+    </style>
+</head>
+<body>
+    <header><h1>Tanjore Photo Gallery</h1></header>
+    <div class="gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQVZIleTT2pV4ou25n5iTmjTVACImuiOHmKg&s" alt="Temple">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmZVkcJ3GYs3WBxv1oL7XwjTtt3DyiVuIrWQ&s" alt="Palace">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZYE5ASpj7MCzsMp_jjw-vEO01SzN7UWs8WQ&s" alt="Library">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNyphZl5EgqT7VEo-57a8SIN6ZrIFnY18kLw&s" alt="Church">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH9sG3k-XoGvJUBxGJP4SZsX5Z12Qq2sthlQ&s" alt="Cholapuram">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaNqQbIvyU02ExXqpv0wIHUXntJTe86ltRPA&s" alt="Guru Temple">
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="hotel.html">Hotel Booking</a>
+        <a href="places.html">Tourist Places</a>
+    </nav>
+</body>
+</html>
