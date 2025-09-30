@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tourist Places in Tanjore</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            background: url("https://png.pngtree.com/background/20250108/original/pngtree-take-a-look-at-this-beautiful-prambanan-temple-picture-image_15628658.jpg") no-repeat center center fixed;
+            background-size: cover;
+        }
+        header {
+            padding: 30px;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            animation: fadeIn 2s ease-in;
+        }
+        section {
+            padding: 20px 50px;
+            animation: fadeIn 2.5s ease-in;
+        }
+        .place {
+            display: flex;
+            align-items: center;
+            background: rgba(0,0,0,0.6);
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 1.5s ease forwards;
+        }
+        .place:nth-child(1) { animation-delay: 0.3s; }
+        .place:nth-child(2) { animation-delay: 0.6s; }
+        .place:nth-child(3) { animation-delay: 0.9s; }
+        .place:nth-child(4) { animation-delay: 1.2s; }
+        .place:nth-child(5) { animation-delay: 1.5s; }
+        .place:nth-child(6) { animation-delay: 1.8s; }
+
+        .place img {
+            width: 250px;
+            height: 180px;
+            border-radius: 10px;
+            margin-right: 20px;
+            border: 3px solid white;
+            transition: transform 0.4s ease;
+        }
+        .place img:hover {
+            transform: scale(1.1);
+        }
+        .place div {
+            max-width: 700px;
+            transition: transform 0.3s ease;
+        }
+        .place:hover div {
+            transform: translateX(10px);
+        }
+        .place h2 {
+            color: yellow;
+            margin-top: 0;
+        }
+        nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            padding: 15px 0;
+            text-align: center;
+            animation: fadeIn 3s ease-in;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            background: rgba(255,255,255,0.2);
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            background: #fff;
+            color: #c0392b;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Tourist Places in Tanjore</h1>
+    </header>
+
+    <section>
+        <div class="place">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTdiy99k8x3f4qUptxh5-MPjrKpu68KwtKxA&s" alt="Brihadeeswarar Temple">
+            <div>
+                <h2>Brihadeeswarar Temple</h2>
+                <p>A UNESCO World Heritage site built by Raja Raja Chola I, known for its grand architecture and spiritual significance.</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY4cL4hDVb8hSLCbvp9MPw_xdTrUf6jT4jIQ&s" alt="Maratha Palace">
+            <div>
+                <h2>Thanjavur Maratha Palace</h2>
+                <p>Historic palace featuring museums, art galleries, and the Saraswathi Mahal Library, reflecting Maratha architecture.</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXA9w2rAOwieLQ9AbbEKjs7dkUzqHcIyg4Cg&s" alt="Saraswathi Mahal Library">
+            <div>
+                <h2>Saraswathi Mahal Library</h2>
+                <p>One of the oldest libraries in Asia, housing rare manuscripts, palm leaf records, and ancient texts.</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="data:image/jpeg;base64,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" alt="Schwartz Church">
+            <div>
+                <h2>Schwartz Church</h2>
+                <p>A church built in 1779 by Raja Serfoji II in memory of Christian missionary Rev. Schwartz.</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH9sG3k-XoGvJUBxGJP4SZsX5Z12Qq2sthlQ&s" alt="Gangaikonda Cholapuram">
+            <div>
+                <h2>Gangaikonda Cholapuram</h2>
+                <p>A grand temple built by Rajendra Chola I, showcasing Chola dynasty's rich art and architecture.</p>
+            </div>
+        </div>
+
+        <div class="place">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaNqQbIvyU02ExXqpv0wIHUXntJTe86ltRPA&s" alt="Alangudi Guru Temple">
+            <div>
+                <h2>Alangudi Guru Temple</h2>
+                <p>A famous Navagraha temple dedicated to Lord Guru (Jupiter), attracting thousands of devotees each year.</p>
+            </div>
+        </div>
+    </section>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="hotel.html">Hotel Booking</a>
+        <a href="places.html">Tourist Places</a>
+    </nav>
+</body>
+</html>
