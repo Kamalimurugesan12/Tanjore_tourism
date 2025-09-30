@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hotel Booking - Tanjore</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: url("https://png.pngtree.com/background/20250108/original/pngtree-take-a-look-at-this-beautiful-prambanan-temple-picture-image_15628658.jpg") no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      padding: 30px;
+      text-align: center;
+      background: rgba(0,0,0,0.6);
+      animation: fadeIn 2s ease-in;
+    }
+    .hotel-list {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 20px;
+    }
+    .hotel-card {
+      background: rgba(0,0,0,0.7);
+      border-radius: 12px;
+      padding: 15px;
+      width: 250px;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .hotel-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .hotel-card h3 { color: yellow; margin: 10px 0; }
+    .hotel-card p { font-size: 14px; }
+    .hotel-card span {
+      display: block;
+      margin-top: 5px;
+      background: yellow;
+      color: black;
+      padding: 4px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .highlight {
+      border: 3px solid yellow;
+      box-shadow: 0px 0px 20px yellow;
+      transform: scale(1.05);
+    }
+    section {
+      padding: 30px;
+      text-align: center;
+    }
+    form {
+      display: inline-block;
+      text-align: left;
+      background: rgba(0,0,0,0.6);
+      padding: 25px;
+      border-radius: 12px;
+      animation: slideUp 2.5s ease forwards;
+    }
+    form label { display: block; margin: 10px 0 5px; }
+    form input, form select {
+      padding: 10px;
+      width: 250px;
+      border: none;
+      border-radius: 6px;
+    }
+    form button {
+      margin-top: 15px;
+      padding: 12px 25px;
+      border: none;
+      background: yellow;
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      width: 100%;
+    }
+    form button:hover { transform: scale(1.1); background: orange; }
+    nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.8);
+      padding: 15px 0;
+      text-align: center;
+      animation: fadeIn 3s ease-in;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.2);
+      padding: 12px 25px;
+      margin: 10px;
+      border-radius: 10px;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+    nav a:hover { background: #fff; color: #c0392b; }
+    @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+    @keyframes slideUp { from {opacity:0; transform:translateY(30px);} to {opacity:1; transform:translateY(0);} }
+  </style>
+</head>
+<body>
+  <header><h1>Book Your Stay in Tanjore</h1></header>
+
+  <!-- All Hotels Display -->
+  <div class="hotel-list">
+    <div class="hotel-card" id="sangam-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy4cva53pETVjKh1wvr4qXaL3uDjY6K7Znpw&s" alt="Sangam Hotel">
+      <h3>Sangam Hotel</h3>
+      <p>Luxury rooms, rooftop restaurant, pool, near Brihadeeswarar Temple.</p>
+      <span>₹4,500 / night</span>
+    </div>
+    <div class="hotel-card" id="ideal-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxkBz0t1U_1CohUkpUU00JJYNH1yI6Ls_oRg&s" alt="Ideal River View Resort">
+      <h3>Ideal River View Resort</h3>
+      <p>Riverside resort with ayurvedic spa, cottages, and nature views.</p>
+      <span>₹3,200 / night</span>
+    </div>
+    <div class="hotel-card" id="parisutham-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw719FvFPgHS8zTxpG8v7loJD0foi5DXufVw&s" alt="Hotel Parisutham">
+      <h3>Hotel Parisutham</h3>
+      <p>Comfortable 3-star stay with dining, pool, and close to attractions.</p>
+      <span>₹2,800 / night</span>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <section>
+    <form id="bookingForm" action="payment.html" method="GET">
+      <label for="hotel">Select Hotel:</label>
+      <select id="hotel" name="hotel" onchange="highlightHotel()">
+        <option value="Sangam Hotel">Sangam Hotel</option>
+        <option value="Ideal River View Resort">Ideal River View Resort</option>
+        <option value="Hotel Parisutham">Hotel Parisutham</option>
+      </select>
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="checkin">Check-in Date:</label>
+      <input type="date" id="checkin" name="checkin" required>
+
+      <label for="checkout">Check-out Date:</label>
+      <input type="date" id="checkout" name="checkout" required>
+
+      <label for="guests">Guests:</label>
+      <select id="guests" name="guests">
+        <option>1</option><option>2</option><option>3</option><option>4+</option>
+      </select>
+
+      <button type="submit">Book Now</button>
+    </form>
+  </section>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="hotel.html">Hotel Booking</a>
+    <a href="places.html">Tourist Places</a>
+  </nav>
+
+  <script>
+    function highlightHotel() {
+      const selected = document.getElementById("hotel").value;
+      const cards = {
+        "Sangam Hotel": "sangam-card",
+        "Ideal River View Resort": "ideal-card",
+        "Hotel Parisutham": "parisutham-card"
+      };
+      Object.values(cards).forEach(id => {
+        document.getElementById(id).classList.remove("highlight");
+      });
+      document.getElementById(cards[selected]).classList.add("highlight");
+    }
+    window.onload = highlightHotel;
+  </script>
+</body>
+</html>
